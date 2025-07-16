@@ -12,9 +12,9 @@ export function calculateInhand(ctc, components) {
   const standardDeduction = 75000;
   const epf = 0.12 * (basic+da);
   const professionalTax = 2400;
-
+  const fix = grossSalary-bonus;
   const totalDeductions = epf + professionalTax;
-  const taxableIncome = grossSalary - totalDeductions;
+  const taxableIncome = fix - totalDeductions;
 
   const netAnnual = Math.max(0, taxableIncome);
   const netMonthly = Math.round(netAnnual / 12);
@@ -31,6 +31,7 @@ export function calculateInhand(ctc, components) {
       standardDeduction,
       epf,
       professionalTax,
+      fix,
       totalDeductions,
       taxableIncome,
     },

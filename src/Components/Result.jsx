@@ -62,8 +62,33 @@ function Result({ result }) {
           <div className='flex justify-between'><p className='text-gray-700'>DA:</p><span>₹{Math.round(breakdown.da).toLocaleString()}</span></div>
           <div className='flex justify-between'><p className='text-gray-700'>LTA:</p><span>₹{Math.round(breakdown.lta).toLocaleString()}</span></div>
           <div className='flex justify-between'><p className='text-gray-700'>Special Allowance:</p><span>₹{Math.round(breakdown.specialAllowance).toLocaleString()}</span></div>
-          <div className='flex justify-between'><p className='text-gray-700'>Bonus:</p><span>₹{Math.round(breakdown.bonus).toLocaleString()}</span></div>
+          <div className='flex justify-between'>
+            <div className="relative flex items-center group">
+              <p className='text-gray-700 mr-2'>Performance Bonus:</p>
+              <svg className="w-4 h-4 text-gray-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              
+              {/* Tooltip text that appears on hover */}
+              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max px-2 py-1 bg-gray-700 text-white text-xs rounded-md 
+                            invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity duration-300">
+                Performance bonus is variable component and is not a part of Fix salary.
+              </div>
+            </div>
+            <span>₹{Math.round(breakdown.bonus).toLocaleString()}</span>
+          </div>
+          
           <div className='flex justify-between font-medium mt-2'><p className='text-gray-700'>Gross Salary:</p><span>₹{Math.round(breakdown.grossSalary).toLocaleString()}</span></div>
+          
+          <div className='flex justify-between'>
+            <div className='relative flex items-center group'>
+              <p className='text-gray-700 mr-2 font-medium mt-1.5'>Fix Annual Salary: </p>
+              <svg className="w-4 h-4 text-gray-400 mt-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <div className='absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max px-2 py-1 bg-gray-700 text-white text-xs rounded-md invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity duration-300'>
+                 Fix Annual Salary is "Gross salary - Performance Bonus" 
+              </div>
+            </div>
+            <span className='mt-1.5 font-semibold'>₹{Math.round(breakdown.fix).toLocaleString()}</span>
+          </div>
+        
         </div>
 
         <hr className='my-4' />

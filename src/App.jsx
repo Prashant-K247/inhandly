@@ -1,4 +1,5 @@
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
+import Scrolltop from './Components/Scrolltop'
 import { useState } from 'react'
 import Home from './Pages/Home'
 import Contact from './Pages/Contact'
@@ -22,6 +23,7 @@ function App() {
       </header>
 
       <div className='flex-grow'>
+        <Scrolltop/>
         <Routes>
         <Route path='/' element = {<Home/>} />
         <Route path='/taxregime' element = {<Taxregime/>} />
