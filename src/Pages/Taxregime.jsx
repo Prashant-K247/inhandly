@@ -33,32 +33,32 @@ function Taxregime() {
 
   return (
     <>
-      <div className='px-20 mt-10'>
-        <div className='px-20 py-8 border-2 bg-white border-amber-50 rounded-3xl shadow-xl'>
-          <h1 className='text-gray-700 text-4xl font-sans font-bold '>New Tax Regime changes: FY 2024-25 v/s <br/> FY 2025-26</h1>
+      <div className='px-4 sm:px-10 md:px-20 mt-10'>
+        <div className='px-4 sm:px-10 md:px-20 py-8 border-2 bg-white border-amber-50 rounded-3xl shadow-xl'>
+          <h1 className='text-gray-700 text-sm sm:text-2xl md:text-4xl font-sans font-bold '>New Tax Regime changes: FY 2024-25 v/s <br/> FY 2025-26</h1>
         </div>
       </div>
 
       {/* taxt calculator input */}
-      <div className='px-20 py-10'>
-        <div className=' px-15 border-2 bg-white border-amber-50 rounded-3xl shadow-xl'>
-          <h3 className=' text-left py-5 text-gray-700 font-bold text-2xl'>Tax Calculator </h3>
-          <div className=' flex items-center gap-4 mb-6 '>
-            <input type="text" className=' w-3/4 px-5 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400' 
+      <div className='px-4 sm:px-10 md:px-20 py-10'>
+        <div className=' px-4 sm:px-10 md:px-15 border-2 bg-white border-amber-50 rounded-3xl shadow-xl'>
+          <h3 className=' text-left py-5 text-gray-700 font-bold text-lg sm:text-xl md:text-2xl'>Tax Calculator </h3>
+          <div className=' flex flex-col sm:flex-row items-center gap-2 sm:-gap-4 mb-6 '>
+            <input type="text" className=' w-full sm:w-3/4 px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400' 
             placeholder ='Enter Your Annual income after deductions'          
             value={income}
             onChange={(e)=>setincome(e.target.value)}/>
-            <button className='w-1/4 bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition' 
+            <button className='w-full sm:w-1/4 bg-blue-600 text-white py-3 rounded-lg  font-semibold hover:bg-blue-700 transition' 
              onClick={calculatetax}>
               Calculate Tax
             </button>
           </div>
           {/* output */}
       {result && (
-        <div className='flex gap-8 px-4 pb-10'>
+        <div className=' flex flex-col md:flex-row gap-8 px-4 pb-10'>
           {/* OLD Regime */}
-          <div className='w-full bg-gray-100 rounded-2xl shadow-md p-6'>
-            <h3 className='text-xl font-bold text-gray-700 mb-2 border-b border-gray-300 pb-2'>
+          <div className='w-full md:w-1/2 bg-gray-100 rounded-2xl shadow-md p-6'>
+            <h3 className='text-sm md:text-xl  font-bold text-gray-700 mb-2 border-b border-gray-300 pb-2'>
               FY 2024-25 <span className='text-gray-600 text-sm'>(return to be filed between 1st April 2025 - 31 Dec 2025)</span>
             </h3>
             <div className='text-lg text-gray-700 space-y-2'>
@@ -90,7 +90,7 @@ function Taxregime() {
           </div>
 
           {/* NEW Regime */}
-          <div className='w-full bg-blue-50 rounded-2xl shadow-md p-6'>
+          <div className='w-full md:w-1/2 bg-blue-50 rounded-2xl shadow-md p-6'>
             <h3 className='text-xl font-bold text-gray-700 mb-2 border-b border-gray-300 pb-2'>
               FY 2025-26 <span className='text-gray-600 text-sm'>(return to be filed between 1st April 2026 - 31 Dec 2026) - Latest</span>
             </h3>
@@ -129,10 +129,10 @@ function Taxregime() {
       </div>
       
       
-      <div className='px-20 pb-20'>
-        <div className='flex gap-5 justify-center'>
+      <div className='px-4 sm:px-10 md:px-20pb-20'>
+        <div className='flex flex-col md:flex-row gap-5 justify-center'>
 
-          <div className='w-full max-w-xl border bg-white border-amber-50 rounded-3xl shadow-xl p-6'>
+          <div className='w-full md:w-1/2 border  bg-white border-amber-50 rounded-3xl shadow-xl p-6'>
             <h2 className='text-xl  font-bold mb-4'>Financial Year  2024-25</h2>
             <p className='text-gray-700  font-semibold mb-2'>Tax Slabs</p>
 {/* fy24 table */}
@@ -187,7 +187,7 @@ function Taxregime() {
           </div>
 
 
-          <div className='w-full max-w-xl border bg-white border-amber-50 rounded-3xl shadow-xl p-6'>
+          <div className='w-full md:w-1/2 border bg-white border-amber-50 rounded-3xl shadow-xl p-6'>
             <h2 className='text-xl  font-bold mb-4'>Financial Year 2025-26</h2>
             <p className='text-gray-700 font-semibold mb-2'>Tax Slabs</p>
 {/* fy25 table */}
@@ -247,7 +247,7 @@ function Taxregime() {
         
         
         </div>
-        <div className='px-20 py-10 bg-gray-200 rounded-3xl mt-10 shadow-md'>
+        <div className='px-4 sm:px-10 md:px-20 py-10 bg-gray-200 rounded-3xl mt-10 shadow-md'>
           <h1 className='text-xl text-gray-700 font-semibold mb-2'>To read more about Tax Regime follow the link: </h1>
           <a href="http://www.incometax.gov.in/iec/foportal/help/individual/return-applicable-1" className='text-indigo-600 underline hover:text-indigo-800 transition'> - Income Tax Official Website -</a>         
         </div>

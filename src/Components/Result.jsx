@@ -3,7 +3,7 @@ import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recha
 import {Link} from 'react-router-dom'
 import Taxregime from '../Pages/Taxregime';
 
-function Result({ result }) {
+function Result({ result }) { 
   if (!result) return (
     <div className='w-1/2 pl-10 border-l flex items-center justify-center text-gray-400'>
       Enter valid CTC and component values.
@@ -38,7 +38,7 @@ function Result({ result }) {
 
 
   return (
-    <div className='w-1/2 pl-10 border-l'>
+    <div className='w-full md:w-1/2 md:pl-10 md:border-l'>
       <h2 className='text-xl font-bold text-gray-700 mb-4'>Salary Breakdown</h2>
 
       <div className='bg-gray-100 p-6 rounded-lg shadow'>
@@ -138,9 +138,8 @@ function Result({ result }) {
             </PieChart>
           </ResponsiveContainer>
         </div>
+        </div>   
 
-
-      </div>
     </div>
   );
 }

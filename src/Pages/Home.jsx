@@ -79,15 +79,15 @@ function Home() {
 
   return (
     <>
-      <h1 className='flex items-center justify-center px-20 mt-8 mb-3 text-gray-700 font-bold text-3xl font-sans'>
+      <h1 className='flex items-center justify-center px-4 sm:px-10 md:px-20 mt-8 mb-3 text-gray-700 font-bold text-2xl sm:text-3xl md:text-4xl font-sans'>
         CTC to In-hand Calculator
       </h1>
-      <h5 className='flex items-center justify-center px-15 text-xl text-gray-700 font-sans font-semibold'>
+      <h5 className='flex items-center justify-center px-2 sm:px-10 md:px-15 text-xl text-gray-700 font-sans font-semibold'>
         Calculate your in-hand salary and understand your complete compensation structure
       </h5>
 
-      <div className='px-20 mt-10'>
-        <div className='bg-white rounded-xl shadow-md py-10 px-10 flex justify-between'>
+      <div className='px-4 sm:px-10 md:px-20 mt-10'>
+        <div className='bg-white rounded-xl shadow-md py-6 px-4 sm:px-6 md:px-10 flex flex-col md:flex-row gap-6'>
           <Input
             ctc={ctc}
             setCtc={setCtc}
@@ -98,11 +98,11 @@ function Home() {
             handleComponentChange={handleComponentChange}
             showError={showError}
           />
-          <Result result={result} />
+          <Result result={result} />          
         </div>
       </div>
 
-      <div className='bg-blue-50 rounded-lg px-20 my-10 font-sans'>
+      <div className='bg-blue-50 rounded-lg px-4 sm-px-10 md:px-20 my-10 font-sans'>
         <h2 className='flex items-center justify-center text-lg font-medium text-gray-900 mb-2'>
           What is Cost to Company (CTC)?
         </h2>
@@ -117,7 +117,7 @@ function Home() {
       </div>
 
       {/* FAQ Accordion */}
-      <div id='accordian' className='px-20 rounded-3xl font-sans'>
+      <div id='accordian' className='px-2 sm:px-10 md:px-20 rounded-3xl font-sans'>
         <details className='group border-b pb-3'>
           <summary className='flex justify-between items-center cursor-pointer text-lg font-semibold text-gray-700 '>
             What is Basic salary?
@@ -175,12 +175,10 @@ function Home() {
         </details>
       </div>
 
-      <div className='px-20'>
-        <div className='bg-orange-100 rounded-2xl px-10 py-4 mt-10'>
-          <h1 className='text-xl text-yellow-900 font-semibold'>⚠️ Important Note!</h1>
-          <p className='text-left px-7 mt-2 text-yellow-800'>
-            This calculator provides estimates based on standard deductions and tax rates. Actual figures may vary based on your specific situation, tax regime choice, and company policies.
-          </p>
+      <div className='px-2 sm:px-10 md:px-20'>
+        <div className="bg-orange-100 rounded-2xl px-10 py-4 mt-10 ">
+          <h1 className='flex text-xl text-yellow-900 font-semibold'> ⚠️Important Note!</h1>
+          <p className='flex text-left px-7 mt-2 text-yellow-800'>This calculator provides estimates based on standard deductions and tax rates. Actual figures may vary based on your specific situation, tax regime choice, and company policies.</p>
         </div>
       </div>
     </>

@@ -3,7 +3,7 @@ import React from 'react';
 function Input({ ctc, setCtc, esops, setEsops, components, handleComponentChange,showError}) {
 
   return (
-    <div className='w-1/2 pr-10'>
+    <div className='w-full md:w-1/2'>
       <h1 className='text-3xl font-bold text-gray-700 mb-6'>CTC to Inhand Calculator</h1>
       <div>
         <label className='block text-gray-600 mb-1 text-left font-semibold'>Cost to Company (CTC)*</label>
@@ -31,7 +31,7 @@ function Input({ ctc, setCtc, esops, setEsops, components, handleComponentChange
       
       <div>
         <h3 className='text-left text-gray-700 mb-4 text-xl'>Components:</h3>
-
+      {/* components */}
       {[
         { label: 'Basic Salary', key: 'basic' },
         { label: 'HRA', key: 'hra' },
@@ -58,7 +58,7 @@ function Input({ ctc, setCtc, esops, setEsops, components, handleComponentChange
       )}
 
       </div>
-      
+         
     </div>
   );
 }
