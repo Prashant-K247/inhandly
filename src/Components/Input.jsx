@@ -4,7 +4,7 @@ function Input({ ctc, setCtc, esops, setEsops, components, handleComponentChange
 
   return (
     <div className='w-full md:w-1/2'>
-      <h1 className='text-3xl font-bold text-gray-700 mb-6'>CTC to Inhand Calculator</h1>
+      <h1 className='text-2xl md:text-3xl font-bold text-gray-700 mb-6'>CTC to Inhand Calculator</h1>
       <div>
         <label className='block text-gray-600 mb-1 text-left font-semibold'>Cost to Company (CTC)*</label>
         <input

@@ -79,7 +79,7 @@ function Home() {
 
   return (
     <>
-      <h1 className='flex items-center justify-center px-4 sm:px-10 md:px-20 mt-8 mb-3 text-gray-700 font-bold text-2xl sm:text-3xl md:text-4xl font-sans'>
+      <h1 className='flex items-center justify-center px-2 sm:px-10 md:px-20 mt-8 mb-3 text-gray-700 font-bold text-2xl sm:text-3xl md:text-4xl font-sans'>
         CTC to In-hand Calculator
       </h1>
       <h5 className='flex items-center justify-center px-2 sm:px-10 md:px-15 text-xl text-gray-700 font-sans font-semibold'>

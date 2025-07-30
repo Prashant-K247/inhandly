@@ -36,7 +36,7 @@ function Contact() {
           
 
           <div className='w-full md:w-1/2  border-2 bg-white border-amber-50 shadow-md rounded-2xl  flex flex-col p-5'>
-            <h1 className='text-3xl sm:text-4xl text-left px-6 text-gray-800 font-bold mb-4'>
+            <h1 className='text-2xl sm:text-4xl text-left px-6 ml-4 text-gray-800 font-bold mb-4'>
               Find <span className='text-gray-600'>me here.</span>
             </h1>
 

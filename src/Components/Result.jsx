@@ -5,7 +5,7 @@ import Taxregime from '../Pages/Taxregime';
 
 function Result({ result }) { 
   if (!result) return (
-    <div className='w-1/2 pl-10 border-l flex items-center justify-center text-gray-400'>
+    <div className='w-full md:w-1/2 md:pl-10 md:border-l flex items-center justify-center text-center text-gray-400'>
       Enter valid CTC and component values.
     </div>
   );
@@ -103,7 +103,7 @@ function Result({ result }) {
         <hr className='my-4' />
 
         <div className='flex justify-between font-semibold'>
-          <p className='text-gray-700'>Net Taxable Income (Post Deductions):</p>
+          <p className='text-gray-700'>Net Taxable Income: <br/>(Post Deductions)</p>
           <span>₹{Math.round(breakdown.taxableIncome).toLocaleString()}</span>
         
           
@@ -115,19 +115,23 @@ function Result({ result }) {
         </nav>
         
 
-        <div className='mt-8 border-t pt-6'>
+        <div className='mt-8 md:border-t pt-6'>
           <h3 className='text-lg font-semibold text-gray-700 mb-2'>Combined Earnings & Deductions</h3>
-          <ResponsiveContainer width="100%" height={300}>
+
+          <div className='w-full h-[350px] sm:h-[350px] md:h-[350px]'>
+            <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
+                className='text-sm sm:text-md md:text-xl'
                 data={combinedData}
                 dataKey="value"
                 nameKey="name"
                 cx="50%"
-                cy="50%"
-                outerRadius={100}
+                cy="40%"
+                outerRadius="60%"
                 fill="#8884d8"
                 label
+                activeShape={null}
               >
                 {combinedData.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={PASTEL_COLORS[index % PASTEL_COLORS.length]} />
@@ -137,6 +141,9 @@ function Result({ result }) {
               <Legend layout="horizontal" verticalAlign="bottom" align="center" />
             </PieChart>
           </ResponsiveContainer>
+
+          </div>
+          
         </div>
         </div>   
 
