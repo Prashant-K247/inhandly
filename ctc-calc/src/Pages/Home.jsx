@@ -17,7 +17,7 @@ function Home() {
   const handleComponentChange = (key, value) => {
     setComponents(prev => ({ ...prev, [key]: Number(value) }));
   };
-//download 
+//download button added
   const handledownload = async () => {
     console.log("Frontend result object:", result,ctc);
     if (!result) {
