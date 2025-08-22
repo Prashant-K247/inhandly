@@ -91,7 +91,7 @@ function Taxregime() {
 
           {/* NEW Regime */}
           <div className='w-full md:w-1/2 bg-blue-50 rounded-2xl shadow-md p-6'>
-            <h3 className='text-xl font-bold text-gray-700 mb-2 border-b border-gray-300 pb-2'>
+            <h3 className='text-sm md:text-xl font-bold text-gray-700 mb-2 border-b border-gray-300 pb-2'>
               FY 2025-26 <span className='text-gray-600 text-sm'>(return to be filed between 1st April 2026 - 31 Dec 2026) - Latest</span>
             </h3>
             <div className='text-lg text-gray-700 space-y-2'>

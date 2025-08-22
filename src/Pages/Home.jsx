@@ -5,6 +5,8 @@ import { calculateInhand } from '../utils/inhandcalculator';
 import { CalculatorContext } from '../Context/CalculatorContext';
 
 function Home() {
+  
+  
   const {
     ctc, setCtc,
     esops, setEsops,
@@ -14,6 +16,37 @@ function Home() {
 
   const handleComponentChange = (key, value) => {
     setComponents(prev => ({ ...prev, [key]: Number(value) }));
+  };
+
+  const handledownload = async () => {
+    console.log("Frontend result object:", result,ctc);
+    if (!result) {
+    alert("Please calculate your CTC first");
+    return;
+    }
+    const data = {
+      ctc:ctc,
+      breakdown: JSON.stringify(result.breakdown,null,2),
+      inhand: result.netAnnual,
+      netmonthly: result.netMonthly
+    };
+
+    const response = await fetch("http://localhost:5000/generate-pdf", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "ctc-report.pdf";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
   };
 
   useEffect(() => {
@@ -88,7 +121,8 @@ function Home() {
 
       <div className='px-4 sm:px-10 md:px-20 mt-10'>
         <div className='bg-white rounded-xl shadow-md py-6 px-4 sm:px-6 md:px-10 flex flex-col md:flex-row gap-6'>
-          <Input
+          <div className='flex-col sm:w-full md:w-1/2 '>
+            <Input
             ctc={ctc}
             setCtc={setCtc}
             esops={esops}
@@ -98,7 +132,14 @@ function Home() {
             handleComponentChange={handleComponentChange}
             showError={showError}
           />
-          <Result result={result} />          
+          <button
+          onClick={handledownload}
+          className='mt-6 px-6 py-2 text-white font-semibold text-lg bg-blue-600 transition duration-300 ease-in-out hover:bg-blue-800 transform rounded-lg '>
+            Get Report
+          </button>
+          </div>
+  
+          <Result result={result} />  
         </div>
       </div>
 
