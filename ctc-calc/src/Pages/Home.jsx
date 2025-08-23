@@ -31,7 +31,7 @@ function Home() {
       netmonthly: result.netMonthly
     };
 
-    const response = await fetch("http://localhost:5000/generate-pdf", {
+    const response = await fetch("/generate-pdf", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
